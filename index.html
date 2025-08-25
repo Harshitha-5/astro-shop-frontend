@@ -1,53 +1,455 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cara - Premium Fashion & Style | E-commerce Store</title>
-    <meta name="description" content="Discover premium fashion at Cara. Shop the latest trends in clothing, accessories, and style essentials. Free shipping, quality guarantee, and exceptional customer service." />
-    <meta name="keywords" content="fashion, clothing, style, e-commerce, premium fashion, trendy clothes, online shopping" />
-    <meta name="author" content="Cara Fashion" />
-    <link rel="canonical" href="https://cara-fashion.com" />
+    <meta name="description" content="Discover premium fashion at Cara. Shop the latest trends in clothing, accessories, and style essentials. Free shipping, quality guarantee, and exceptional customer service.">
+    <meta name="keywords" content="fashion, clothing, style, e-commerce, premium fashion, trendy clothes, online shopping">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#" onclick="showPage('home')">
+                <div class="logo-icon me-2">C</div>
+                <span class="fw-bold">Cara</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" onclick="showPage('home')">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('shop')">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('blog')">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('about')">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('contact')">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-primary me-2 position-relative" onclick="showPage('cart')">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
+                            0
+                        </span>
+                    </button>
+                    <button class="btn btn-outline-secondary">
+                        <i class="fas fa-user"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Cara - Premium Fashion & Style | E-commerce Store" />
-    <meta property="og:description" content="Discover premium fashion at Cara. Shop the latest trends in clothing, accessories, and style essentials." />
-    <meta property="og:image" content="https://cara-fashion.com/og-image.jpg" />
-    <meta property="og:url" content="https://cara-fashion.com" />
-    <meta property="og:site_name" content="Cara Fashion" />
+    <!-- Home Page -->
+    <div class="page active" id="home-page">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row align-items-center min-vh-75">
+                    <div class="col-lg-6">
+                        <h1 class="display-4 fw-bold mb-4">Trade-in-offer</h1>
+                        <h2 class="h3 text-muted mb-4">Super value deals</h2>
+                        <h3 class="h2 text-primary mb-4">On all products</h3>
+                        <p class="lead mb-4">Save more with coupons & up to 70% off!</p>
+                        <button class="btn btn-primary btn-lg" onclick="showPage('shop')">Shop Now</button>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=400&fit=crop" alt="Hero Banner" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Cara - Premium Fashion & Style" />
-    <meta name="twitter:description" content="Discover premium fashion at Cara. Shop the latest trends in clothing and accessories." />
-    <meta name="twitter:image" content="https://cara-fashion.com/twitter-image.jpg" />
+        <!-- Categories Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Shop by Category</h2>
+                <div class="row g-4">
+                    <div class="col-6 col-md-3">
+                        <div class="category-card text-center">
+                            <div class="category-icon">
+                                <i class="fas fa-tshirt"></i>
+                            </div>
+                            <h5>Shirts</h5>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="category-card text-center">
+                            <div class="category-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h5>Formal</h5>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="category-card text-center">
+                            <div class="category-icon">
+                                <i class="fas fa-shoe-prints"></i>
+                            </div>
+                            <h5>Shoes</h5>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="category-card text-center">
+                            <div class="category-icon">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                            <h5>Accessories</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Schema.org structured data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Store",
-      "name": "Cara Fashion",
-      "description": "Premium fashion e-commerce store",
-      "url": "https://cara-fashion.com",
-      "logo": "https://cara-fashion.com/logo.png",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "562 Wellington Road, Street 32",
-        "addressLocality": "San Francisco",
-        "addressRegion": "CA",
-        "postalCode": "94102",
-        "addressCountry": "US"
-      },
-      "telephone": "+1-555-123-4567",
-      "email": "contact@cara.com"
-    }
-    </script>
-  </head>
+        <!-- Featured Products -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5">Featured Products</h2>
+                <div class="row g-4" id="featured-products">
+                    <!-- Products will be loaded by JavaScript -->
+                </div>
+            </div>
+        </section>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+        <!-- Newsletter -->
+        <section class="py-5 bg-primary text-white">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <h3 class="mb-4">Stay Updated</h3>
+                        <p class="mb-4">Subscribe to our newsletter for the latest fashion trends and exclusive offers</p>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email" id="newsletter-email">
+                            <button class="btn btn-light" type="button" onclick="subscribeNewsletter()">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Shop Page -->
+    <div class="page" id="shop-page">
+        <section class="py-5">
+            <div class="container">
+                <h1 class="mb-5">Shop All Products</h1>
+                <div class="row">
+                    <div class="col-lg-3 mb-4">
+                        <div class="filter-sidebar">
+                            <h5>Filter by Category</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="shirts" id="filter-shirts">
+                                <label class="form-check-label" for="filter-shirts">Shirts</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="formal" id="filter-formal">
+                                <label class="form-check-label" for="filter-formal">Formal</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="casual" id="filter-casual">
+                                <label class="form-check-label" for="filter-casual">Casual</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="row g-4" id="all-products">
+                            <!-- Products will be loaded by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Blog Page -->
+    <div class="page" id="blog-page">
+        <section class="hero-banner bg-light py-5">
+            <div class="container text-center">
+                <h1 class="display-4">#readmore</h1>
+                <p class="lead">Stay updated with the latest fashion trends and style tips</p>
+            </div>
+        </section>
+        
+        <section class="py-5">
+            <div class="container">
+                <h2 class="mb-5">Latest Blog Posts</h2>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-card">
+                            <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=400&h=250&fit=crop" alt="Blog Post" class="blog-image">
+                            <div class="blog-content">
+                                <small class="text-muted">March 15, 2024</small>
+                                <h5>Spring Fashion Trends 2024</h5>
+                                <p>Discover the hottest fashion trends for this spring season and how to incorporate them into your wardrobe.</p>
+                                <a href="#" class="btn btn-outline-primary btn-sm">Continue Reading</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-card">
+                            <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=400&h=250&fit=crop" alt="Blog Post" class="blog-image">
+                            <div class="blog-content">
+                                <small class="text-muted">March 10, 2024</small>
+                                <h5>Sustainable Fashion Guide</h5>
+                                <p>Learn how to build a sustainable wardrobe without compromising on style and quality.</p>
+                                <a href="#" class="btn btn-outline-primary btn-sm">Continue Reading</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-card">
+                            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&h=250&fit=crop" alt="Blog Post" class="blog-image">
+                            <div class="blog-content">
+                                <small class="text-muted">March 5, 2024</small>
+                                <h5>Color Coordination Tips</h5>
+                                <p>Master the art of color coordination and create stunning outfits that turn heads.</p>
+                                <a href="#" class="btn btn-outline-primary btn-sm">Continue Reading</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Page -->
+    <div class="page" id="about-page">
+        <section class="hero-banner bg-light py-5">
+            <div class="container text-center">
+                <h1 class="display-4">About Cara</h1>
+                <p class="lead">Your trusted fashion partner since 2020</p>
+            </div>
+        </section>
+
+        <section class="py-5">
+            <div class="container">
+                <div class="row align-items-center mb-5">
+                    <div class="col-lg-6">
+                        <h2>Our Story</h2>
+                        <p>Cara was founded with a simple mission: to make high-quality, stylish fashion accessible to everyone. We believe that great style shouldn't break the bank.</p>
+                        <p>Our team of fashion experts curates the latest trends and timeless classics to bring you a diverse collection that suits every occasion and personal style.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop" alt="Our Story" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download App Section -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5">Download Our App</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-4 text-center">
+                        <div class="phone-mockup">
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=200&h=400&fit=crop" alt="Mobile App" class="img-fluid">
+                        </div>
+                        <h5 class="mt-3">Shop on the go</h5>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="phone-mockup">
+                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=200&h=400&fit=crop" alt="Mobile App" class="img-fluid">
+                        </div>
+                        <h5 class="mt-3">Easy checkout</h5>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="#" class="btn btn-dark me-3">
+                        <i class="fab fa-apple me-2"></i>App Store
+                    </a>
+                    <a href="#" class="btn btn-success">
+                        <i class="fab fa-google-play me-2"></i>Google Play
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div class="page" id="contact-page">
+        <section class="hero-banner bg-light py-5">
+            <div class="container text-center">
+                <h1 class="display-4">Contact Us</h1>
+                <p class="lead">Get in touch with our team</p>
+            </div>
+        </section>
+
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h3>Get in Touch</h3>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Address</strong>
+                                    <p>562 Wellington Road, Street 32<br>San Francisco, CA 94102</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Phone</strong>
+                                    <p>+1-555-123-4567</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email</strong>
+                                    <p>contact@cara.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Working Hours</strong>
+                                    <p>Mon - Fri: 9:00 AM - 6:00 PM<br>Sat - Sun: 10:00 AM - 4:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <form class="mt-4" id="contact-form">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019284144574!2d-122.41941508468205!3d37.77492597975893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c6c8f4459%3A0xb10ed6d9b5050fa5!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1647088031782!5m2!1sen!2s" 
+                            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Cart Page -->
+    <div class="page" id="cart-page">
+        <section class="py-5">
+            <div class="container">
+                <h1 class="mb-5">Your Cart</h1>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div id="cart-items">
+                            <!-- Cart items will be loaded by JavaScript -->
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="cart-summary">
+                            <h4>Order Summary</h4>
+                            <div class="d-flex justify-content-between">
+                                <span>Subtotal:</span>
+                                <span id="cart-subtotal">$0.00</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span>Shipping:</span>
+                                <span>$10.00</span>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between">
+                                <strong>Total: <span id="cart-total">$10.00</span></strong>
+                            </div>
+                            <button class="btn btn-primary w-100 mt-3" onclick="checkout()">Proceed to Checkout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>About Cara</h5>
+                    <p>Your trusted fashion partner providing high-quality clothing and accessories for every occasion.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>My Account</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Sign In</a></li>
+                        <li><a href="#">View Cart</a></li>
+                        <li><a href="#">My Wishlist</a></li>
+                        <li><a href="#">Track My Order</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Install App</h5>
+                    <p>From App Store or Google Play</p>
+                    <div class="app-links">
+                        <a href="#" class="d-block mb-2">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/200px-Download_on_the_App_Store_Badge.svg.png" alt="App Store" style="height: 40px;">
+                        </a>
+                        <a href="#" class="d-block">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/200px-Google_Play_Store_badge_EN.svg.png" alt="Google Play" style="height: 40px;">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contact Info</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>562 Wellington Road, Street 32, San Francisco</p>
+                    <p><i class="fas fa-phone me-2"></i>+1-555-123-4567</p>
+                    <p><i class="fas fa-envelope me-2"></i>contact@cara.com</p>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                        <i class="fab fa-cc-stripe"></i>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2024 Cara Fashion. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
 </html>
